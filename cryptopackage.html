@@ -1,0 +1,706 @@
+<!doct<!DOCTYPE html>
+<html>
+<?php session_start();
+include('Admin/Database/Connection.php');
+if($email = $_SESSION['email'])
+{
+  $id = $_SESSION['id'];
+}
+else
+{
+  header("Location:login.html");
+}
+
+
+?>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Us Crypto Stock.</title>
+        <link rel="icon" href="/static/assets/img/favicon.d1b45b458ef6.png" />
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.d59729439a20.css">
+        <link rel="stylesheet" type="text/css" href="css/export.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-extend.0f113029eba9.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.7d46203b9170.css">
+        <link rel="stylesheet" type="text/css" href="css/ionicons.40fa6b0f442e.css">
+        <link rel="stylesheet" type="text/css" href="css/cryptocoins.566b3ccd0c95.css">
+        <link rel="stylesheet" type="text/css" href="css/simple-line-icons.1edcd7ccb77b.css">
+        <link rel="stylesheet" type="text/css" href="css/master_style.3bd2ed6f9dd9.css">
+        <link rel="stylesheet" type="text/css" href="css/general.371ce09cb303.css">
+        <link rel="stylesheet" type="text/css" href="css/_all-skins.663f7ae35658.css">
+        <link rel="stylesheet" type="text/css" href="css/select2.min.4765adee4f66.css">
+        <link rel="stylesheet" type="text/css" href="css/website.9576659c0ec6.css">
+      <script type="text/javascript" src="css/sweetalert2@8.js"></script>
+      <script type="text/javascript" src="css/api.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/jquery.loading.ca1694f83fd1.css">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="./dist/sidebar-menu.css">
+<style>
+.custom-overlay {
+  background-color: #adadad;
+  opacity: 0.7;
+  display: none;
+}
+.loading-spinner-container {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+</style>
+    
+
+    </head>
+
+    <body>
+<body class="hold-transition skin-green">
+        
+        
+
+        <div class="wrapper page-dashboard">
+
+            
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- logo for regular state and mobile devices -->
+            
+                   
+            
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" style="background-color: #9eba46;">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="col-5">
+
+                </div>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="search-box">
+                            <a class="nav-link hidden-sm-down" href="javascript:void(0)">
+                            <i class="mdi mdi-magnify"></i>
+                            </a>
+                            <form class="app-search" style="display: none;">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter">
+                                <a class="srh-btn">
+                                <i class="ti-close"></i>
+                                </a>
+                            </form>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+       
+
+        
+        <aside class="main-sidebar" style="background-color: #1A2226 !important;">
+            <!-- sidebar -->
+            <section class="sidebar" >
+                <!-- Sidebar user panel -->
+                <div class="user-panel" style="height: 180px;">
+                    <div class="ulogo">
+                        <a href="/">
+                            <!-- logo for regular state and mobile devices -->
+                           <img src="img/Untitled (5).png" style="position: relative;top: -30px;">
+                           
+                        </a>
+                    </div>
+                </div>
+ 
+    <ul class="sidebar-menu" style="background-color:#1A2226 !important;">
+
+      <li>
+        <a href="home.php">
+          <i class="fa fa-dashboard sidebar-header"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        
+      </li>
+      <li>
+        <a href="cryptopackage.html">
+          <i class="fa fa-files-o"></i>
+          <span>Package</span>
+           <i class="fa fa-angle-left pull-right"></i>
+        </a>
+       
+      </li>
+      <li>
+        <a href="rafferal.php">
+          <i class="fa fa-th"></i> <span>Network</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+      </li>
+      <li>
+        <a href="history.php">
+          <i class="fa fa-pie-chart"></i>
+          <span>Wallet</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+       
+        <ul class="sidebar-submenu">
+          <li><a href="wallet.php"></i>Add Wallet </a></li>
+           <li><a href="withdraw.php"></i>Withdraw </a></li>
+           <li><a href="history.php"></i>Withdraw Report</a></li>
+         
+          
+        </ul>
+      </li>
+    
+      <li>
+        <a href="#">
+          <i class="fa fa-edit"></i> <span>Support</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+
+        <ul class="sidebar-submenu">
+           <li><a href="contactus.php"></i>Add ticket</a></li>
+          <li><a href="tickets.php"></i>Your Tickets</a></li>
+          
+        </ul>
+      </li>
+
+       <li>
+        <a href="#">
+          <i class="fa fa-edit"></i> <span>Materials</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+
+        <ul class="sidebar-submenu">
+           <li><a href="ShowImages.php"></i>Image</a></li>
+          <li><a href="ShowVedio.php"></i>Vedio</a></li>
+          
+        </ul>
+      </li>
+
+
+      <li>
+        <a href="#">
+          <i class="fa fa-edit"></i> <span>Setting</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+
+        <ul class="sidebar-submenu">
+           <li><a href="changepassword.php"></i>Change Password</a></li>
+          <li><a href="changeprofile.php"></i>Profile Setting</a></li>
+          
+        </ul>
+      </li>
+
+
+      <li>
+        <a href="logout.php">
+          <i class="fa fa-pie-chart"></i>
+          <span>Logout</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+       
+      </li>
+        
+    </ul>
+  </section>
+        </aside>
+        
+        
+
+        
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper" style="min-height: 699.875px; background: #2f2f2f;">
+                
+                <!-- Main content -->
+               
+
+                <section class="content" style="background-color: #2f2f2f;">
+                    <div class="row">
+                       <div class="col-lg-4" style="height: 200px;">
+                            <a href="depositamount.php?deposit=10&packageid=Activation">
+                            <div class="box box-body bg-hexagons-white pull-up">
+                                <div class="media align-items-center p-4">
+                                    <div class="text-center">
+                                       
+                                    </div>
+                                    <div>
+                                        <div class="no-margin text-bold" style="font-size: 18px;font-weight: bold;">Activation Package</div>
+                                        
+                                       
+                                    </div>
+                                </div>
+                                <div class="flexbox align-items-center mt-20">
+                                    
+                                    <div class="text-right">
+                                        <p class="no-margin ">
+                                            <span class="up" id="profit" style="font-size: 20px;color:#9EBA46;">10 $</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+
+
+                        <div class="col-lg-4" style="height: 200px; ">
+                            <a href="depositamount.php?deposit=200&packageid=Basic">
+                            <div class="box box-body bg-hexagons-white pull-up">
+                                <div class="media align-items-center p-4">
+                                    <div class="text-center">
+                                       
+                                    </div>
+                                    <div>
+                                        <h3 class="no-margin text-bold">Basic Package</h3>
+                                 
+                                    </div>
+                                </div>
+                                <div class="flexbox align-items-center mt-20">
+                                    
+                                    <div class="text-right">
+                                        <p class="no-margin ">
+                                            <span class="up" id="profit" style="font-size: 20px;color:#9EBA46;">200 $</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+
+ <div class="col-lg-4" style="height: 200px;">
+                            <a href="depositamount.php?deposit=650&packageid=Bronze">
+                            <div class="box box-body bg-hexagons-white pull-up">
+                                <div class="media align-items-center p-4">
+                                    <div class="text-center">
+                                       
+                                    </div>
+                                    <div>
+                                         <h3 class="no-margin text-bold" >Bronze Package</h3>
+                                       
+                                       
+                                    </div>
+                                </div>
+                                <div class="flexbox align-items-center mt-20">
+                                    
+                                    <div class="text-right">
+                                        <p class="no-margin ">
+                                            <span class="up" id="profit" style="font-size: 20px;color:#9EBA46;">650 $</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+                        <div class="col-lg-4" style="height: 200px;">
+                            <a href="depositamount.php?deposit=1500&packageid=Silver">
+                            <div class="box box-body bg-hexagons-white pull-up">
+                                <div class="media align-items-center p-4">
+                                    <div class="text-center">
+                                       
+                                    </div>
+                                    <div>
+                                        <h3 class="no-margin text-bold">Silver Package</h3>
+                                        
+                                       
+                                    </div>
+                                </div>
+                                <div class="flexbox align-items-center mt-20">
+                                    
+                                    <div class="text-right">
+                                        <p class="no-margin ">
+                                            <span class="up" id="profit" style="font-size: 20px;color:#9EBA46;">1500 $</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+
+                       
+
+
+                        
+
+ <div class="col-lg-4" style="height: 200px;">
+                            <a href="depositamount.php?deposit=2000&packageid=Gold">
+                            <div class="box box-body bg-hexagons-white pull-up">
+                                <div class="media align-items-center p-4">
+                                    <div class="text-center">
+                                       
+                                    </div>
+                                    <div>
+                                        <h3 class="no-margin text-bold">Gold Package</h3>
+                                     
+                                       
+                                    </div>
+                                </div>
+                                <div class="flexbox align-items-center mt-20">
+                                    
+                                    <div class="text-right">
+                                        <p class="no-margin ">
+                                            <span class="up" id="profit" style="font-size: 20px;color:#9EBA46;">2500 $</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+ <div class="col-lg-4" style="height: 200px;">
+                            <a href="depositamount.php?deposit=5000&packageid=Booster">
+                            <div class="box box-body bg-hexagons-white pull-up">
+                                <div class="media align-items-center p-4">
+                                    <div class="text-center">
+                                       
+                                    </div>
+                                    <div>
+                                        <h3 class="no-margin text-bold">Booster Package</h3>
+                                       
+                                       
+                                    </div>
+                                </div>
+                                <div class="flexbox align-items-center mt-20">
+                                    
+                                    <div class="text-right">
+                                        <p class="no-margin ">
+                                            <span class="up" id="profit" style="font-size: 20px;color:#9EBA46;">5000 $</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+                          <div class="col-lg-4" style="height: 200px;">
+                            
+                            <div class="">
+                                <div class="media align-items-center p-4">
+                                    <div class="text-center">
+                                       
+                                    </div>
+                                    <div>
+                                        <h3 class="no-margin text-bold"></h3>
+                                        
+                                       
+                                    </div>
+                                </div>
+                                <div class="flexbox align-items-center mt-20">
+                                    
+                                    <div class="text-right">
+                                        <p class="no-margin ">
+                                            <span class="up" id="profit" style="font-size: 20px;color:#9EBA46;"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                     
+                        </div>
+
+
+                        <div class="col-lg-4" style="height: 200px;">
+                            <a href="depositamount.php?deposit=7000&packageid=Platinum">
+                            <div class="box box-body bg-hexagons-white pull-up">
+                                <div class="media align-items-center p-4">
+                                    <div class="text-center">
+                                       
+                                    </div>
+                                    <div>
+                                        <h3 class="no-margin text-bold">Platinum Package</h3>
+                                        
+                                       
+                                    </div>
+                                </div>
+                                <div class="flexbox align-items-center mt-20">
+                                    
+                                    <div class="text-right">
+                                        <p class="no-margin ">
+                                            <span class="up" id="profit" style="font-size: 20px;color:#9EBA46;">7000 $</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+
+
+
+                       
+                        
+
+                    </div>
+                    
+                </section>
+
+                 <div class="col-11" style="position: relative;left: 30px;top: -40px;">                            
+                                <div class="alert alert-danger  alert-with-icon" data-notify="container" style="background-color: #ef5350;">
+                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
+                                       
+                                    </button>
+                                    <span data-notify="message"><b>1.&nbsp;The time until the activation Packages depending on processing speed of network or blockchain. Some exchange and wallet may take more time to transfer funds. However, the process generally does not exceed 6 hours. Therefore, if your package does not activate after 6 hours, please contact the support centre.<br>
+                                   </p>
+                                       
+                                    </span>
+                                </div>
+                            </div>
+
+                             <div class="col-11" style="position: relative;left: 30px;top: -30px;">                            
+                                <div class="alert alert-danger  alert-with-icon" data-notify="container" style="background-color: #ef5350;">
+                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
+                                       
+                                    </button>
+                                    <span data-notify="message"><b>
+                                    2.&nbsp;Daily earnings are processed and posted at midnight,Sunday To sunday,(7 Days),USA Standard Time.</p>
+                                       
+                                    </span>
+                                </div>
+                            </div>
+                            
+            </div>
+
+
+
+        </div>
+
+
+
+
+       <!--   Core JS Files   -->
+       <script src="/static/assets/vendor_components/jquery/dist/jquery.min.473957cfb255.js" type="text/javascript"></script>
+       
+
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" type="text/css" href="/static/session_security/style.8908ffb3a65a.css">
+
+    
+    
+
+<div id="session_security_warning" class="session_security" style="display:none" aria-hidden="true" role="dialog">
+    <div class="session_security_overlay"></div>
+    <div class="session_security_modal" role="document" tabindex="-1">
+        <h3>Your session is about to expire</h3>
+        <p>Click or type to extend your session.</p>
+    </div>
+</div>
+
+
+
+    
+    <script type="text/javascript" src="/static/session_security/script.31fba0c8641d.js"></script>
+
+    
+    
+        <script type="text/javascript">
+            var sessionSecurity = new yourlabs.SessionSecurity({
+                pingUrl: '/session_security/ping/',
+                warnAfter: 3400,
+                expireAfter: 3600,
+                confirmFormDiscard: "You have unsaved changes in a form of this page."
+            });
+        </script>
+        
+
+
+
+       <script src="/static/assets/vendor_components/popper/dist/popper.min.c753d591a0af.js"></script>
+       <script src="/static/assets/vendor_components/bootstrap/dist/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+       <script src="/static/assets/js/perfect-scrollbar.jquery.min.01554ac13763.js" type="text/javascript"></script>
+        <!-- Slimscroll -->
+        <script src="/static/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.932ce78ad2ae.js"></script>
+        <!-- FastClick -->
+        <script src="/static/assets/vendor_components/fastclick/lib/fastclick.6e9d3b0da74f.js"></script>
+        <!-- webticker -->
+        <script src="/static/assets/vendor_components/Web-Ticker-master/jquery.webticker.min.f78e1731f573.js"></script>
+        <!-- Crypto_Admin App -->
+        <script src="/static/assets/js/template.eca497836b5a.js"></script>
+        <!-- Crypto_Admin dashboard demo (This is only for demo purposes) -->
+        <script src="/static/assets/js/pages/dashboard.89aa0af61d92.js"></script>
+        <!-- Chart -->
+        <script src="/static/assets/vendor_components/chart.js-master/Chart.min.c508c360e58f.js"></script>
+        <script src="/static/assets/js/pages/chartjs-int.b4511dbd6cc9.js"></script>
+        <!-- Material Dashboard javascript methods -->
+        <script src="/static/assets/js/material-dashboard.1613785b9630.js"></script>
+        <!-- Select2 -->
+        <script src="/static/assets/js/select2.min.090dfbc88a4a.js"></script>
+
+
+        
+        <!-- FLOT CHARTS -->
+        <script src="/static/assets/vendor_components/Flot/jquery.flot.89bc8ea971e9.js"></script>
+        <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+        <script src="/static/assets/vendor_components/Flot/jquery.flot.pie.62dbbef98865.js"></script>
+        <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+        <script src="/static/assets/vendor_components/Flot/jquery.flot.categories.b404141c778b.js"></script>
+        <!-- Crypto_Admin for flot Chart purposes -->
+        <script src="/static/assets/js/pages/widget-flot-charts.82674e57fbf2.js"></script>
+
+        <script src="/static/trader/socket.io.8d3330390b84.js"></script>
+        <script src="/static/trader/ccc-streamer-utilities.585dcae879b3.js"></script>
+        <script src="/static/trader/current/stream.83ddba51e904.js"></script>
+        <script src="/static/trader/stream-log.eaf24e721592.js"></script>
+
+    <script type="text/javascript">
+    function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = Math.round(Math.random() * minutes);
+            seconds = Math.round(Math.random() * seconds);
+            minutes = minutes-1
+
+            var lastone = timer.toString().split('').pop();
+
+            switch(lastone) {
+                case '9':
+                    display = $('#profit-BTC');
+                    break;
+                case '8':
+                    display = $('#profit-ETH');
+                    break;
+                case '7':
+                    display = $('#profit-EOS');
+                    break;
+                case '6':
+                    display = $('#profit-BCH');
+                    break;
+                case '5':
+                    display = $('#profit-XRP');
+                    break;
+                case '4':
+                    display = $('#profit-TRX');
+                    break;
+                case '3':
+                    display = $('#profit-LTC');
+                    break;
+                case '2':
+                    display = $('#profit-ADA');
+                    break;
+                case '1':
+                    display = $('#profit-IOT');
+                    break;
+                default:
+                    display = $('#profit-ETC');
+            }
+
+            display.removeClass();
+            if(minutes < 0){
+                display.addClass("down");
+            }else{
+                display.addClass("up");
+                minutes = "+"+minutes
+            }
+
+            display.text(minutes+","+seconds+"%");
+
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 3000);
+    }
+    jQuery(function ($) {
+        var fiveMinutes = 60 * 5,
+        display = $('#profit-BTC');
+        startTimer(fiveMinutes, display);
+        StreamTransaction.init("wss://streamer.fxtradingcorp.com/bot");
+    });
+    </script>
+
+
+
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        </script>
+        <script>
+            function formatState(state) {
+                var $el = $(state.element);
+
+                var baseUrl = $el.data('image');
+                var $state = $(
+                    '<span><img width="20" src="' + baseUrl + '" class="imgFlag" /> ' + state.text + '</span>'
+                );
+                return $state;
+            };
+
+            $(function () {
+                $(".select-translate").select2({
+                    templateResult: formatState
+                });
+            });
+        </script>
+
+
+
+
+
+
+    
+    
+
+<div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google Translate"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><div class="tooltip-inner" id="line-chart-tooltip" style="position: absolute; display: none; opacity: 0.8;"></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body>
+  <script src="./dist/sidebar-menu.js"></script>
+  <script>
+    $.sidebarMenu($('.sidebar-menu'))
+  </script>
+</head>
+</html>

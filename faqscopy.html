@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>FXTRADING CORP.</title>
+        <link rel="icon" href="/static/assets/img/favicon.d1b45b458ef6.png" />
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.d59729439a20.css">
+        <link rel="stylesheet" type="text/css" href="css/export.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-extend.0f113029eba9.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.7d46203b9170.css">
+        <link rel="stylesheet" type="text/css" href="css/ionicons.40fa6b0f442e.css">
+        <link rel="stylesheet" type="text/css" href="css/cryptocoins.566b3ccd0c95.css">
+        <link rel="stylesheet" type="text/css" href="css/simple-line-icons.1edcd7ccb77b.css">
+        <link rel="stylesheet" type="text/css" href="css/master_style.3bd2ed6f9dd9.css">
+        <link rel="stylesheet" type="text/css" href="css/general.371ce09cb303.css">
+        <link rel="stylesheet" type="text/css" href="css/_all-skins.663f7ae35658.css">
+        <link rel="stylesheet" type="text/css" href="css/select2.min.4765adee4f66.css">
+        <link rel="stylesheet" type="text/css" href="css/website.9576659c0ec6.css">
+      <script type="text/javascript" src="css/sweetalert2@8.js"></script>
+      <script type="text/javascript" src="css/api.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/jquery.loading.ca1694f83fd1.css">
+</head>
+
+      <body class="skin-green sidebar-mini" style="position: relative; min-height: 100%; top: 0px; height: auto;">
+        
+        
+        <div class="wrapper page-dashboard" style="height: auto; min-height: 100%;">
+            
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">
+                    <img src="/static/assets/img/logo-full-white-croped.28a058a25259.png" alt="logo" class="img-responsive light-logo" style="max-width:140px;">
+                </span>
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="col-5">
+                 
+<div class="text-center">
+    <form id="locale_switcher" action="/i18n/setlang/" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="GoZkip9rsS9mGG7yhu5e9gr4IDCH9xeHg88Ew8zAqCQJFHIywNZxvEGThD9ZjGUS">
+        <input name="next" type="hidden" value="">
+        <select class="select-translate col-md-6 select2-hidden-accessible" name="language" onchange="$('#locale_switcher').submit()" data-select2-id="1" tabindex="-1" aria-hidden="true">
+        
+        
+        
+        
+            
+            <option data-image="/static/assets/img/en.e499f1fbaeb0.png" value="en" selected="" data-select2-id="3">
+            
+            English (en)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/pt-br.3fc8860c56a9.png" value="pt-br">
+            
+            Português Brasileiro (pt-br)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/zh-hans.00d7b6d94371.png" value="zh-hans">
+            
+            简体中文 (zh-hans)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/ko.b026a63067e5.png" value="ko">
+            
+            한국어 (ko)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/ja.8e69fa7dddb9.png" value="ja">
+            
+            日本語 (ja)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/es.fed7d0ce876b.png" value="es">
+            
+            español (es)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/it.cc79b1867397.png" value="it">
+            
+            italiano (it)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/vi.fe6804314ec8.png" value="vi">
+            
+            Tiếng Việt (vi)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/ar.ec114d74cb14.png" value="ar">
+            
+            العربيّة (ar)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/ru.b36b3e38b06f.png" value="ru">
+            
+            Русский (ru)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/de.cc23f204eaad.png" value="de">
+            
+            Deutsch (de)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/hi.d51ec02ec1a8.png" value="hi">
+            
+            Hindi (hi)
+            </option>
+        
+            
+            <option data-image="/static/assets/img/th.5fd4b8d56250.png" value="th">
+            
+            ภาษาไทย (th)
+            </option>
+        
+        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 203.75px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-language-ml-container"><span class="select2-selection__rendered" id="select2-language-ml-container" role="textbox" aria-readonly="true" title="
+            
+            English (en)
+            ">
+            
+            English (en)
+            </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+        <noscript>
+            <input type="submit" value="Set" />
+        </noscript>
+    </form>
+</div>
+                </div>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="search-box">
+                            <a class="nav-link hidden-sm-down" href="javascript:void(0)">
+                            <i class="mdi mdi-magnify"></i>
+                            </a>
+                            <form class="app-search" style="display: none;">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter">
+                                <a class="srh-btn">
+                                <i class="ti-close"></i>
+                                </a>
+                            </form>
+                        </li>
+                        <!-- User Account -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="ion ion-person"></i>
+                            </a>
+                            <ul class="dropdown-menu scale-up">
+                                <li class="user-body">
+                                    <div class="row no-gutters">
+                                        <div class="col-12 text-left">
+                                            <a href="/profile/">
+                                            <i class="ion ion-person"></i>My Profile</a>
+                                        </div>
+                                        <div role="separator" class="divider col-12"></div>
+                                        <div class="col-12 text-left">
+                                            <a href="/logout">
+                                            <i class="fa fa-power-off"></i>Logout</a>
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        
+        <aside class="main-sidebar">
+            <!-- sidebar -->
+            <section class="sidebar" style="height: auto;">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="ulogo">
+                        <a href="/">
+                            <!-- logo for regular state and mobile devices -->
+                            <img src="/static/assets/img/logo-full-white-croped.28a058a25259.png" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- sidebar menu -->
+                <ul class="sidebar-menu tree" data-widget="tree">
+                    <li class="nav-devider"></li>
+                    <li>
+                        <a href="/dashboard">
+                        <i class="icon-home"></i> <span>Dashboard</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                        </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="/financial/trader">
+                        <i class="fa fa-line-chart"></i>
+                        <span>Robots</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                        </span>
+                        </a>
+                    </li>
+                    
+                    <li class="treeview">
+                        <a href="#">
+                        <i class="icon-organization"></i>
+                            <span>Network</span>
+                            <span class="pull-right-container">
+                            <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/binary/">Binary</a>
+                            </li>
+                            <li>
+                                <a href="/unilevel">Unilevel</a>
+                            </li>
+                            <li>
+                                <a href="/indication/">My nominees</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                        <i class="fa fa-money"></i>
+                            <span>Financial</span>
+                            <span class="pull-right-container">
+                            <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/pay/history/">History</a>
+                            </li>
+                            <li>
+                                <a href="/pay/purchases">Invoices</a>
+                            </li>
+                            <li>
+                                <a href="/wallet/">Wallets</a>
+                            </li>
+                            <li>
+                                <a href="/pay/withdrawal">Withdrawal</a>
+                            </li>
+                            <li>
+                                <a href="/pay/withdrawals">Withdrawal report</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/support/faq/">
+                        <i class="fa fa-question"></i>
+                        <span>FAQ</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-right pull-right"></i>
+                        </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/support/">
+                        <i class="fa fa-support"></i>
+                        <span>Support</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-right pull-right"></i>
+                        </span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                        <i class="fa fa-gear"></i>
+                            <span>Settings</span>
+                            <span class="pull-right-container">
+                            <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/profile">Profile</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Materials</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                        </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/materials/video/">Videos</a>
+                            </li>
+                            <li>
+                                <a href="/materials/pdf/">PDF/APN</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/logout">
+                        <i class="fa fa-power-off"></i>
+                        <span>Logout</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                        </span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper" style="min-height: 699.875px;">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        FAQ
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">
+                                <i class="fa fa-dashboard"></i> Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="/support/">Support Ticket</a>
+                        </li>
+                        <li class="breadcrumb-item active">FAQ</li>
+                    </ol>
+                </section>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="box box-solid bg-black">
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <h2 style="text-align: center;">Ask your questions</h2>
+                                        
+                                        <h5 style="text-align: center;">If your question is not here, enter into <a href="/support/">support section</a> and create a ticket.</h5>
+                                    </div>
+                                </div>
+                                <div class="box box-solid bg-black">   
+                                    <!-- /.box-header -->
+                                    <div class="box-body">
+                                        <div class="card-container">
+                                            <h2>Activation</h2>
+                                            <div id="activation">
+                                                <div class="card">
+                                                    <div class="card-header" id="plan_activate_fundHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#plan_activate_fund" aria-expanded="false" aria-controls="plan_activate_fund">
+                                                                My plan does not activate after wiring funds.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                            
+                                                    <div id="plan_activate_fund" class="collapse" aria-labelledby="plan_activate_fundHeading" data-parent="#activation">
+                                                        <div class="card-body">
+                                                            - After a payment request is created, you have 24 hours to wire funds to a designated wallet. Based on the fluctuation
+                                                            of Bitcoin prices, posted amount of Bitcoin may be larger or smaller. Price updates commence every 30 minutes.
+                                                            <br>- The system only validates your request to transfer when you pay the designated amount or more. If less bitcoin were
+                                                            submitted, the transfer request would be voided automatically.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="long_acivate_planHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#long_acivate_plan" aria-expanded="false" aria-controls="long_acivate_plan">
+                                                                How long does it take to activate my plan?
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="long_acivate_plan" class="collapse" aria-labelledby="long_acivate_planHeading" data-parent="#activation">
+                                                        <div class="card-body">
+                                                            - The time until the activation varies depending on processing speed of network or blockchain. Some exchange and wallet
+                                                            may take more time to transfer funds. However, the process generally does not exceed 6 hours. Therefore, if your plan
+                                                            does not activate after 6 hours, please contact the support centre.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-container">
+                                            <h2>Earnings</h2>
+                                            <div id="earnings">
+                                                <div class="card">
+                                                    <div class="card-header" id="days_week_receive_earningsHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#days_week_receive_earnings" aria-expanded="false" aria-controls="days_week_receive_earnings">
+                                                                Which days of a week that I receive my earnings?
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                            
+                                                    <div id="days_week_receive_earnings" class="collapse" aria-labelledby="days_week_receive_earningsHeading" data-parent="#earnings">
+                                                        <div class="card-body">
+                                                            - Daily earnings are processed and posted at midnight, Monday through Friday, Korean Standard Time.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="activated_not_received_earningsHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#activated_not_received_earnings" aria-expanded="false" aria-controls="activated_not_received_earnings">
+                                                                My plan was activated but not yet received earnings.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="activated_not_received_earnings" class="collapse" aria-labelledby="activated_not_received_earningsHeading" data-parent="#earnings">
+                                                        <div class="card-body">
+                                                            - It takes 24 hours until your investments are processed through our system. You will be listed as an FXTRADING dividend recipient after 24 hours.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="upgraded_not_received_earnings_prevplanHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#upgraded_not_received_earnings_prevplan" aria-expanded="false" aria-controls="upgraded_not_received_earnings_prevplan">
+                                                                I upgraded my plan but received earnings for the previous plan.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="upgraded_not_received_earnings_prevplan" class="collapse" aria-labelledby="upgraded_not_received_earnings_prevplanHeading" data-parent="#earnings">
+                                                        <div class="card-body">
+                                                            - The same rules apply for plan upgrades with the purchase of a new plan. Your upgrades will be in force after 24
+                                                            hours. Until that point, you will receive the earnings on the previous plan.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-container">
+                                            <h2>Withdrawal</h2>
+                                            <div id="withdrawal">
+                                                <div class="card">
+                                                    <div class="card-header" id="days_week_withdrawHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#days_week_withdraw" aria-expanded="false" aria-controls="days_week_withdraw">
+                                                                Which days of a week I can withdraw my funds?
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                            
+                                                    <div id="days_week_withdraw" class="collapse" aria-labelledby="days_week_withdrawHeading" data-parent="#withdrawal">
+                                                        <div class="card-body">
+                                                            - You can withdraw your funds Monday through Friday.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="minimum_amount_withdrawHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#minimum_amount_withdraw" aria-expanded="false" aria-controls="minimum_amount_withdraw">
+                                                                What is the minimum amount that I can withdraw?
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="minimum_amount_withdraw" class="collapse" aria-labelledby="minimum_amount_withdrawHeading" data-parent="#withdrawal">
+                                                        <div class="card-body">
+                                                            - The minimum withdrawal amount is currently $50. There is no limit on the maximum amount you can withdraw.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="process_remittance_request_withdrawHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#process_remittance_request_withdraw" aria-expanded="false" aria-controls="process_remittance_request_withdraw">
+                                                                How long does it take to process my remittance request?
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="process_remittance_request_withdraw" class="collapse" aria-labelledby="process_remittance_request_withdrawHeading" data-parent="#withdrawal">
+                                                        <div class="card-body">
+                                                            - Please allow 1 to 3 business days to process your withdrawal requests.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="email_confirmation_no_founds_walletHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#email_confirmation_no_founds_wallet" aria-expanded="false" aria-controls="email_confirmation_no_founds_wallet">
+                                                                I received payment confirmation on my e-mail, but no funds were remitted to my wallet.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="email_confirmation_no_founds_wallet" class="collapse" aria-labelledby="email_confirmation_no_founds_walletHeading" data-parent="#withdrawal">
+                                                        <div class="card-body">
+                                                            - It may take up to 24 hours after confirmation for requests to be processed in blockchain and posted on your wallet.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="hash_email_not_recognizedHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#hash_email_not_recognized" aria-expanded="false" aria-controls="hash_email_not_recognized">
+                                                                Hash values I received by e-mail are not recognized by Blockchain.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="hash_email_not_recognized" class="collapse" aria-labelledby="hash_email_not_recognizedHeading" data-parent="#withdrawal">
+                                                        <div class="card-body">
+                                                            - It generally takes 24 hours for blockchain to recognize hash values. You can review the progress by the link provided
+                                                            in the e-mail message until then.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-container">
+                                            <h2>Binary</h2>
+                                            <div id="binary">
+                                                <div class="card">
+                                                    <div class="card-header" id="get_binary_bonusHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#get_binary_bonus" aria-expanded="false" aria-controls="get_binary_bonus">
+                                                                What should I do to get a binary bonus?
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                        
+                                                    <div id="get_binary_bonus" class="collapse" aria-labelledby="get_binary_bonusHeading" data-parent="#binary">
+                                                        <div class="card-body">
+                                                            - Upon your purchase of a plan, credits are created. To receive a binary bonus, you must have one referee on each side
+                                                            of your binary.
+                                                            <br>- Binary credits are remitted to bonus on the midnight every day, Korean Standard Time.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="referral_member_creditHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#referral_member_credit" aria-expanded="false" aria-controls="referral_member_credit">
+                                                                I made one referral member, but I did not receive a credit.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="referral_member_credit" class="collapse" aria-labelledby="referral_member_creditHeading" data-parent="#binary">
+                                                        <div class="card-body">
+                                                            - Please confirm if the new referral member is the first one on your left or right. First referral on each side only
+                                                            qualifies you for binary bonus program. They do not create credits and do not count as binary members.
+                                                            <br>- Was your plan active when your referral members in lower tier activate their plans? Credits are provided only if your
+                                                            plan was active when lower tier members activate their plans.
+                                                            <br>- Are your lower tier referral members’ accounts leadership accounts? Leadership accounts do not own earnings and do
+                                                            not get payments. Therefore, leadership members do not create binary credit.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="amount_credit_incorrectHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#amount_credit_incorrect" aria-expanded="false" aria-controls="amount_credit_incorrect">
+                                                                Amounts of my credit received seems not correct.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="amount_credit_incorrect" class="collapse" aria-labelledby="amount_credit_incorrectHeading" data-parent="#binary">
+                                                        <div class="card-body">
+                                                            - Created credits are 8% of the price of plans purchased. If a member in your network upgrades a plan, the member only
+                                                            creates credits on the difference between two plans, not on the entire amount of the plan the member bought. For
+                                                            instance, if a member upgrades to $500 plan from $300 plan, you would receive 8% of the difference between the two
+                                                            plans. The difference is $200 in this example so that you will get 16 credits in total.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="receive_bonus_less_creditsHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#receive_bonus_less_credits" aria-expanded="false" aria-controls="receive_bonus_less_credits">
+                                                                I received bonus less than created credits.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="receive_bonus_less_credits" class="collapse" aria-labelledby="receive_bonus_less_creditsHeading" data-parent="#binary">
+                                                        <div class="card-body">
+                                                            - There is a rule for the binary program; no member shall receive binary bonus larger than the plan they are on. For
+                                                            instance, if you are using $100 plan, but have created 150 credits through the binary network, you will only receive
+                                                            $100 bonus, forfeiting the remaining $50.
+                                                            <br>- You also need to be careful about 200% earning rule. You can never receive an amount four times more than the plan
+                                                            you are on. For example, if you are using $100 plan, have received $350 as earnings so far and you have 100 credits
+                                                            outstanding for a binary bonus, only $50 that matches your 200% ceiling will be paid to you as a binary bonus.
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-container">
+                                            <h2>Referral Bonus</h2>
+                                            <div id="referral_bonus">
+                                                <div class="card">
+                                                    <div class="card-header" id="not_receive_referral_bonus_activatedHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#not_receive_referral_bonus_activated" aria-expanded="false" aria-controls="not_receive_referral_bonus_activated">
+                                                                I did not receive my referral bonus while my referral member was activated.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                        
+                                                    <div id="not_receive_referral_bonus_activated" class="collapse" aria-labelledby="not_receive_referral_bonus_activatedHeading" data-parent="#referral_bonus">
+                                                        <div class="card-body">
+                                                            - To receive a referral bonus, your plan must be active when your referral’s plan comes activated. To ensure receipt of
+                                                            your bonus, please wait until your plan gets activated before providing referral codes.
+                                                            <br>- Referral Bonus is subject to 200% earning rule. Bonus from referrals will be paid up until their earnings reach 200%
+                                                            of their plan price. Bonus ceases to be remitted when your referral member reaches the earning cap.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header" id="incorrect_amount_bonus_paidHeading">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#incorrect_amount_bonus_paid" aria-expanded="false" aria-controls="incorrect_amount_bonus_paid">
+                                                                An incorrect amount of bonus was paid.
+                                                            </button>
+                                                        </h5>
+                                                    </div>
+                                                    <div id="incorrect_amount_bonus_paid" class="collapse" aria-labelledby="incorrect_amount_bonus_paidHeading" data-parent="#referral_bonus">
+                                                        <div class="card-body">
+                                                            - The referral bonus is 6% of the plan price purchased. If your referral member upgrades their plan, it creates the
+                                                            bonus on the difference between the two plans, not the entire amount of the plan purchased. For example, if your
+                                                            referral member upgrades to $500 plan from $300 plan, you will receive a 6% bonus on the difference amount between the
+                                                            plans. In this case, you will receive a $12 bonus as the difference is $200.
+                                                            <br>- You also need to be careful about 200% earning rule. You can never receive an amount four times more than the plan
+                                                            you are on. For example, if you are using $100 plan, have received $350 as earnings so far and you have 100 credits
+                                                            outstanding for a referral bonus, only $50 that matches your 200% ceiling will be paid to you as a referral bonus.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <!-- /.box-body -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+       <!--   Core JS Files   -->
+       <script src="/static/assets/vendor_components/jquery/dist/jquery.min.473957cfb255.js" type="text/javascript"></script>
+       
+
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" type="text/css" href="/static/session_security/style.8908ffb3a65a.css">
+
+    
+    
+
+<div id="session_security_warning" class="session_security" style="display:none" aria-hidden="true" role="dialog">
+    <div class="session_security_overlay"></div>
+    <div class="session_security_modal" role="document" tabindex="-1">
+        <h3>Your session is about to expire</h3>
+        <p>Click or type to extend your session.</p>
+    </div>
+</div>
+
+
+
+    
+    <script type="text/javascript" src="/static/session_security/script.31fba0c8641d.js"></script>
+
+    
+    
+        <script type="text/javascript">
+            var sessionSecurity = new yourlabs.SessionSecurity({
+                pingUrl: '/session_security/ping/',
+                warnAfter: 3400,
+                expireAfter: 3600,
+                confirmFormDiscard: "You have unsaved changes in a form of this page."
+            });
+        </script>
+        
+
+
+
+       <script src="/static/assets/vendor_components/popper/dist/popper.min.c753d591a0af.js"></script>
+       <script src="/static/assets/vendor_components/bootstrap/dist/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+       <script src="/static/assets/js/perfect-scrollbar.jquery.min.01554ac13763.js" type="text/javascript"></script>
+        <!-- Slimscroll -->
+        <script src="/static/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.932ce78ad2ae.js"></script>
+        <!-- FastClick -->
+        <script src="/static/assets/vendor_components/fastclick/lib/fastclick.6e9d3b0da74f.js"></script>
+        <!-- webticker -->
+        <script src="/static/assets/vendor_components/Web-Ticker-master/jquery.webticker.min.f78e1731f573.js"></script>
+        <!-- Crypto_Admin App -->
+        <script src="/static/assets/js/template.eca497836b5a.js"></script>
+        <!-- Crypto_Admin dashboard demo (This is only for demo purposes) -->
+        <script src="/static/assets/js/pages/dashboard.89aa0af61d92.js"></script>
+        <!-- Chart -->
+        <script src="/static/assets/vendor_components/chart.js-master/Chart.min.c508c360e58f.js"></script>
+        <script src="/static/assets/js/pages/chartjs-int.b4511dbd6cc9.js"></script>
+        <!-- Material Dashboard javascript methods -->
+        <script src="/static/assets/js/material-dashboard.1613785b9630.js"></script>
+        <!-- Select2 -->
+        <script src="/static/assets/js/select2.min.090dfbc88a4a.js"></script>
+
+
+        
+<script>
+</script>
+
+
+
+
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        </script>
+        <script>
+            function formatState(state) {
+                var $el = $(state.element);
+
+                var baseUrl = $el.data('image');
+                var $state = $(
+                    '<span><img width="20" src="' + baseUrl + '" class="imgFlag" /> ' + state.text + '</span>'
+                );
+                return $state;
+            };
+
+            $(function () {
+                $(".select-translate").select2({
+                    templateResult: formatState
+                });
+            });
+        </script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google Translate"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+
+
+    
+    
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body>
+
+</html>
