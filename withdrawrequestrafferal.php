@@ -1,9 +1,12 @@
 
 <?php 
+
 include('Admin/Database/Connection.php');
-if(isset($_POST['customerid']))
+
+
+if(isset($_POST['rafferalammount']))
 {
-	
+	$rafferalammount = $_POST['rafferalammount'];
 	$customerid = $_POST['customerid'];
 	$bitcoin = $_POST['bitcoin'];
 	$withdraw = $_POST['witdraw'];
@@ -34,20 +37,20 @@ if(isset($_POST['customerid']))
             $run = mysqli_query($link,$insert);
             
 
-           $s = "SELECT * FROM `dailyroi` d
+           $s = "SELECT * FROM `rafferal` r
 inner join customer c
-on c.id = d.customerid
-where d.customerid='".$customerid."'
-order by d.id DESC LIMIT 1";
+on c.username = r.rafferalunderusername
+WHERE c.id='".$customerid."'
+LIMIT 1";
 $runs = mysqli_query($link,$s);
 if(mysqli_num_rows($runs)>0)
 {
 	while($row = mysqli_fetch_assoc($runs))
 	{
-		$addroi = $row['addroi'];
+		$totalcommission = $row['totalcommission'];
 		$username = $row['username'];
-		$withdrawupdate  = $addroi - $withdraw;
-		$updatequery = "update dailyroi set addroi='".$withdrawupdate."' where customerid='".$customerid."'";
+		$withdrawupdate  = $rafferalammount - $withdraw;
+		$updatequery = "update rafferal set totalcommission='".$withdrawupdate."' where rafferalunderusername='".$username."'";
 		$runssqqsd = mysqli_query($link,$updatequery);
 	}
 	}
@@ -58,5 +61,3 @@ if(mysqli_num_rows($runs)>0)
 
 }
 }
-
-?>

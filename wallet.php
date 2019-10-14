@@ -14,7 +14,7 @@ else
 if(isset($_GET['wallet']))
 {
   $wallet = $_GET['wallet'];
-  $sql  = "update `wallet` set WHERE `wallet`='".$wallet."' and `id`='".$id."'";
+  $sql  = "update `wallet` set status='1' WHERE `wallet`='".$wallet."' and `id`='".$id."'";
   $runsssssssssss = mysqli_query($link,$sql);
 
 }
@@ -447,7 +447,7 @@ function ReadData()
       var walletaddress = $('#walletaddress').val();
       var status = 0;
       var customerid = $('#customerid').val();
-      alert(customerid);
+     // alert(customerid);
       $.ajax({
         url:"addnewwallet.php",
         method:"post",

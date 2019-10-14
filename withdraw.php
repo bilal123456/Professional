@@ -378,7 +378,24 @@ else
 </div>
                                          <div class="form-label-group">
                  <label for="inputEmail">Bitcoin Address</label>
-                <input name="baddress" type="text" id="bitcoin" class="form-control form-input" placeholder="Bitcoin Address" required autofocus>
+                 <select name="baddress" id="bitcoin" class="form-control">
+                  <?php
+                  $getbitcoinaddress = "select * from wallet where customerid='".$id."' and status='1'";
+                  $run = mysqli_query($link,$getbitcoinaddress);
+                  if(mysqli_num_rows($run)>0)
+                  {
+                    while($row = mysqli_fetch_assoc($run))
+                    {
+                      ?>
+
+<option value="<?php echo $row['wallet'] ?>" class="form-control"><?php echo $row['wallet'] ?></option>
+                      <?php
+                    }
+                  }
+                  ?>
+                   
+                 </select>
+               
                
               </div>
 <label for="inputPassword">Amount</label>
@@ -399,8 +416,20 @@ else
                                         
                                       
                                        <br>
+
+                                       <?php 
+                                            if(isset($_GET['rafferalcommission']))
+                                            {
+                                              echo'<button type="withdraw" name="Withdrawbtn" id="btn-confirm-rafferal"   class="btn btn-block btn-success btn-lg">WITHDRAWAL</button>';
+                                            }
+                                            else
+                                            {
+                                                echo'<button type="withdraw" name="Withdrawbtn" id="btn-confirm"   class="btn btn-block btn-success btn-lg">WITHDRAWAL</button>';
+                                            }
+
+                                       ?>
                                           
-                                            <button type="withdraw" name="Withdrawbtn" id="btn-confirm"   class="btn btn-block btn-success btn-lg">WITHDRAWAL</button>
+                                          
                                        
                                     </div>
                                     <!-- /.box-body -->
@@ -529,7 +558,7 @@ $('#alert').hide();
           });
 
 
-           $('#btn-confirm').click(function(){
+           $('#btn-confirm-rafferal').click(function(){
             var customerid = $('#customerid').val();
             var bitcoin = $('#bitcoin').val();
             var amount = $('#amount').val();
@@ -540,7 +569,7 @@ $('#alert').hide();
             var today = $('#today').val();
             var rafferalammount = $('#rafferalcommission').val();
             $.ajax({
-              url:"withdrawrequest.php",
+              url:"withdrawrequestrafferal.php",
               method:"post",
               data:{rafferalammount:rafferalammount,customerid:customerid,bitcoin:bitcoin,witdraw:witdraw,status:status,todaydate:todaydate,today:today,amount:amount},
               success:function(data)

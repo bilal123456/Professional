@@ -22,7 +22,7 @@ else
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>FXTRADING CORP.</title>
+        <title>Us Crypto Stock.</title>
         <link rel="icon" href="/static/assets/img/favicon.d1b45b458ef6.png" />
 <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.d59729439a20.css">
@@ -385,7 +385,7 @@ else
      <tr data-status="in" class="even" style="background-color: #20c997;color: white;">
                             <td><?php echo $i++; ?></td>
                              <td><?php echo $row['todaydate']. "  " .  $row['time']?></td>
-                              <td><?php echo $row['amount'] ?></td>
+                              <td><?php echo $row['send'] ?></td>
                              <td><?php echo $row['bitcoinaddress']; ?></td>
                              
                               <td><?php  if($row['status'] == '0'){echo "underview";} else { echo "approved";}  ?>
