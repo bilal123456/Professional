@@ -13,8 +13,10 @@ else
 
 if(isset($_GET['wallet']))
 {
-  $wallet = $_GET['wallet'];
-  $sql  = "update `wallet` set status='1' WHERE `wallet`='".$wallet."' and `id`='".$id."'";
+  $getwallet = $_GET['wallet'];
+  $sql  = "update `wallet` set status='1'
+where wallet='".$getwallet."'
+and customerid='".$id."'";
   $runsssssssssss = mysqli_query($link,$sql);
 
 }
