@@ -422,65 +422,66 @@ if(isset($_GET['wallet']))
     $(document).ready(function(){
 
     $.sidebarMenu($('.sidebar-menu'));
-// $('#success').hide();
-// ReadData();
-// function ReadData()
-// {
+$('#success').hide();
+ReadData();
+function ReadData()
+{
 
-//   var customerid = $('#customerid').val();
-//   //alert(customerid);
-//   $.ajax({
-//         url:"addnewwallet.php",
-//         method:"post",
-//         data:{customerid:customerid},
-//         success:function(data)
-//         {
+  var customerid = $('#customerid').val();
+  //alert(customerid);
+  $.ajax({
+        url:"addnewwallet.php",
+        method:"post",
+        data:{customerid:customerid},
+        success:function(data)
+        {
           
-//           $('#wallet-data').html(data);
-//         }
-//       });
-// }
-//     $('#wallet').click(function(e)
-//     {
+          $('#wallet-data').html(data);
+        }
+      });
+}
+    $('#wallet').click(function(e)
+    {
   
-//       e.preventDefault();
-//       var walletaddress = $('#walletaddress').val();
-//       var status = 0;
-//       var customerid = $('#customerid').val();
-//       alert(customerid);
-//       $.ajax({
-//         url:"addnewwallet.php",
-//         method:"post",
-//         data:{walletaddress:walletaddress,status:status,customerid:customerid},
-//         success:function(data)
-//         {
+      e.preventDefault();
+      var walletaddress = $('#walletaddress').val();
+      var status = 0;
+      var customerid = $('#customerid').val();
+      alert(customerid);
+      $.ajax({
+        url:"addnewwallet.php",
+        method:"post",
+        data:{walletaddress:walletaddress,status:status,customerid:customerid},
+        success:function(data)
+        {
         
-//           $('#success').show();
-//           $('#success').html(data);
-//           ReadData();
-//         }
-//       });
+          $('#success').show();
+          $('#success').html(data);
+          ReadData();
+        }
+      });
 
-//     });
+    });
 
-// $(document).on('click','#delete',function(e){
+$(document).on('click','#delete',function(e){
 
-//       var id = $(this).attr('data-id');
-//        $.ajax({
-//         url:"addnewwallet.php",
-//         method:"post",
-//         data:{id:id},
-//         success:function(data)
-//         {
-//          $('#success').show();
-//           $('#success').html(data);
-//           ReadData();
-//         }
-//       });
+      var id = $(this).attr('data-id');
+       $.ajax({
+        url:"addnewwallet.php",
+        method:"post",
+        data:{id:id},
+        success:function(data)
+        {
+         $('#success').show();
+          $('#success').html(data);
+          ReadData();
+        }
+      });
 
 
      
-//     });
-//     });
+    });
+    });
+
   </script>
 </html>
