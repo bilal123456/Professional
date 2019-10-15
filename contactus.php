@@ -35,7 +35,7 @@ $id = $_SESSION['id'];
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="fname">Your  Name:</label>
 				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="fname" placeholder="Enter Name" name="fname">
+					<input type="text" class="form-control" id="fname" placeholder="Enter  Name" name="fname">
 				  </div>
 				</div>
 				

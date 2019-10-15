@@ -993,7 +993,7 @@ else
                                         <div>
 
                                             <p class="no-margin font-weight-600 dollar-value" style="position: relative;top: 30px;left: 20px;">
-                                                 <span style="position: relative;left: 20px;">U$ <strong id="spanTotalBalance"><?php echo $dailyroiadd; ?></strong></span>
+                                                 <span style="position: relative;left: 20px;">U$ <strong id="spanTotalBalance">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $dailyroiadd; ?></strong></span>
                                             </p>
                                         </div>
                                     </div>
@@ -1044,7 +1044,7 @@ while($rowselectroidatanew = mysqli_fetch_assoc($runselectroidatanew))
   }
 ?>
                                             <p class="no-margin font-weight-600 dollar-value" style="position: relative;top: 30px;left: 20px;">
-                                                <span style="position: relative;left: 20px;">U$ <strong id="spanTotalBalance" ><?php echo $dailyroinewupdate;  ?></strong></span>
+                                                <span style="position: relative;left: 20px;">U$ <strong id="spanTotalBalance" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $dailyroinewupdate;  ?></strong></span>
                                             </p>
                                             
                                         </div>
@@ -1092,14 +1092,14 @@ include('Admin/Database/Connection.php');
                                             </a>
                                         </div>
                                         <div>
-                                            <h4 class="no-margin text-bold" style="color: #03a9f3;"><a href="Dailyrafferalhistory.php" style="color: #03a9f3;">Direct Rafferal</a></h4>
+                                            <h4 class="no-margin text-bold" style="color: #03a9f3;"><a href="Dailyrafferalhistory.php" style="color: #03a9f3;">Rafferal Income</a></h4>
                                         </div>
                                     </div>
                                     <div class="flexbox align-items-center mt-5">
                                         <div>
 
                                             <p class="no-margin font-weight-600 dollar-value" style="position: relative;top: 30px;left: 20px;">
-                                                 <span style="position: relative;left: 20px;">U$ <strong id="spanTotalBalance"><?php echo $commission; ?></strong></span>
+                                                 <span style="position: relative;left: 20px;">U$ <strong id="spanTotalBalance">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $commission; ?></strong></span>
                                             </p>
                                         </div>
                                     </div>

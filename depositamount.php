@@ -28,7 +28,7 @@ while($row=mysqli_fetch_assoc($run))
 
 <html lang="en">
     <head>
-        
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -286,7 +286,30 @@ while($row=mysqli_fetch_assoc($run))
     </ul>
   </section>
         </aside>
+
+      
 	<div class="container" style="position: relative;top: 70px;left: 50px;">
+    
+
+
+
+
+    <div class="col-lg-5">
+      <?php 
+    if(isset($_GET['message']))
+    {
+      ?>
+
+    <div class="alert alert-success" id="success" style="height: 90;position: relative;left: 350px;">
+        Your Deposit have been Successfully Deposit;
+ 
+</div>
+
+      <?php
+    }
+    ?>
+</div>
+
     <div class="row">
 
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -312,7 +335,11 @@ while($row=mysqli_fetch_assoc($run))
               </div>
 <label for="inputPassword">Amount</label>
               <div class="form-label-group">
-                <input type="text" name="Amount" id="inputPassword" class="form-control form-input"  required value="<?php echo $deposit; ?>"  style="background-color: white;color: black;" >
+                <input type="text" name="Amount" id="inputPassword" class="form-control form-input"  required value="<?php if(isset($_GET['message']))
+                {
+                   $deposit = 0; 
+                }else{echo $deposit;
+                }?>" style="background-color: white;color: black;">
                 
               </div>
 <label for="inputPassword">Receipt</label>
@@ -365,9 +392,7 @@ while($row=mysqli_fetch_assoc($run))
 
           if(isset($_POST['deposit']))
           {
-          	
-         
-            $Amount = $_POST['Amount'];
+          	$Amount = $_POST['Amount'];
             $statu = $_POST['statu'];
             $date = date("Y/m/d");
             $address = $_POST['baddress'];
@@ -377,21 +402,14 @@ while($row=mysqli_fetch_assoc($run))
 
             if($Amount == 10)
             {
-            echo  $insertactivationpackage = "insert into activationpackage(amount,customerid,bitcoinaddress,todaydate) values('".$Amount."','".$id."','".$address."','".$date."')";
+              $insertactivationpackage = "insert into activationpackage(amount,customerid,bitcoinaddress,todaydate) values('".$Amount."','".$id."','".$address."','".$date."')";
               $runinsertacttivationpackage = mysqli_query($link,$insertactivationpackage);
                echo "<script type='text/javascript'>
-            $(document).ready(function(e){
-              $('#alert').show();
-               // console.log(data);
-            var data = 'Your deposit request has been submitted successfully';
-                alert('your deposit request has been submitted successfully');
-                $('#success_message').html(data);
-                $('#success_message').css('color','white');
+               window.location.href = 'depositamount.php?message=Success';
+          </script>";
 
-              });
-            
+              
 
-setInterval(function(){ window.location.href = 'home.php'; }, 3000);</script>";
             }
             else
             {
@@ -677,19 +695,11 @@ if(mysqli_num_rows($runcheckrafferal)>0)
             
 
 
+      
           echo "<script type='text/javascript'>
-            $(document).ready(function(e){
-              $('#alert').show();
-               // console.log(data);
-            var data = 'Your deposit request has been submitted successfully';
-                alert('your deposit request has been submitted successfully');
-                $('#success_message').html(data);
-                $('#success_message').css('color','white');
-
-              });
+               window.location.href = 'depositamount.php?message=Success';
+          </script>";
             
-
-setInterval(function(){ window.location.href = 'home.php'; }, 3000);</script>";
 
 
 }

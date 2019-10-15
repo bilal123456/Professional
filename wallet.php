@@ -320,7 +320,7 @@ and customerid='".$id."'";
                                                     <div class="col-lg-10 col-sm-12">
                                                       <div class="col-lg-12"> 
                                                         <label>Add Wallet</label>
-                                                          <input type="text" id="walletaddress" class="form-control" name="add_wallet">
+                                                          <input type="text" id="walletaddress" class="form-control" required="required" name="add_wallet">
                                                           <input type="hidden" id="customerid" value="<?php echo $id; ?>">
                                                           </div>
                                                           <br>
