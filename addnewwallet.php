@@ -17,7 +17,9 @@ if(isset($_POST['walletaddress']))
 	$customerid = $_POST['customerid'];
 	 $insert = "insert into wallet (wallet,status,customerid) values('".$walletaddress."','".$status."','".$customerid."')";
 	$run = mysqli_query($link,$insert);
-	echo "Your wallet   " . $walletaddress . "as created successfully! you will receive a email an active then";
+	echo "
+	
+	The wallet created sucessfully.You will receive email for activation";
 
 	$sql = "select * from customer where id='".$customerid."'";
 	$runs = mysqli_query($link,$sql);

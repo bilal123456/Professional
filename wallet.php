@@ -302,9 +302,12 @@ and customerid='".$id."'";
                         <li class="breadcrumb-item active"></li>
                     </ol>
                 </section>
-
-<div class="alert alert-success" id="success" style="height: 90;">
+<br><br>
+<div class="col-lg-8" style="position: relative;left: 50px;">
+<div class="alert alert-success" id="success"  style="height: 90;background-color: #ef5350">
  
+</div>
+
 </div>
                 <div class="content">
                     <div class="container-fluid">

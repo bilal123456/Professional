@@ -1092,7 +1092,7 @@ include('Admin/Database/Connection.php');
                                             </a>
                                         </div>
                                         <div>
-                                            <h4 class="no-margin text-bold" style="color: #03a9f3;"><a href="Dailyrafferalhistory.php" style="color: #03a9f3;">Rafferal Income</a></h4>
+                                            <h4 class="no-margin text-bold" style="color: #03a9f3;"><a href="Dailyrafferalhistory.php" style="color: #03a9f3;">Refferral Income</a></h4>
                                         </div>
                                     </div>
                                     <div class="flexbox align-items-center mt-5">

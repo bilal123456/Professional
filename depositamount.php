@@ -301,7 +301,7 @@ while($row=mysqli_fetch_assoc($run))
       ?>
 
     <div class="alert alert-success" id="success" style="height: 90;position: relative;left: 350px;">
-        Your Deposit have been Successfully Deposit;
+       Your deposit has been successfully submitted
  
 </div>
 
