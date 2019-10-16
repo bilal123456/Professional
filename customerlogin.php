@@ -12,7 +12,7 @@ require 'mail/src/Exception.php';
 require 'mail/src/PHPMailer.php';
 require 'mail/src/SMTP.php';
 
-if(isset($_POST['customerlogin']))
+if(isset($_POST['username']))
 {
 	$username   = $_POST['username'];
 	$firstname = $_POST['firstname'];
@@ -30,8 +30,9 @@ $sql = "select * from customer where username='".$username."'";
 	$run = mysqli_query($link,$sql);
 	if(mysqli_num_rows($run) > 0)
 	{
-	echo "Already Entered";	
+	echo 0;	
 	//header("Location:Login.html");
+
 	}
 	else
 	{
@@ -43,10 +44,17 @@ $todaydate = date("Y/m/d");
 		if($runinsert)
 		{
 
-// Load Composer's autoloader
+			// $from = "info@uscryptostok.com";
+			// $to = "bilalraza203@gmail.com";
+			// $subject = "testing";
+			// $message = "s";
+			// $header = "From: ". $from;
+			// mail($to,$subject,$message,$header);
+
+// // Load Composer's autoloader
 
 
-// Instantiation and passing `true` enables exceptions
+// // Instantiation and passing `true` enables exceptions
  $mail = new PHPMailer(true);
 
     
@@ -55,18 +63,20 @@ $todaydate = date("Y/m/d");
      <a href="http://www.uscryptostok.com/verify.php?vkey='.$vkey.'">Activate Account</a>';
      $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
+
      $phpMailer = new PHPMailer(true);
 $phpMailer->isSMTP();
-$phpMailer->Host = "smtp.zoho.com";
+$phpMailer->Host = "mail.privateemail.com";
 $phpMailer->SMTPAuth = true;
-$phpMailer->Username = "bilalraza203@gmail.com";
-$phpMailer->Password = "king5872123123";
+$phpMailer->Username = "info@uscryptostok.com";
+$phpMailer->Password = "%sOv!HQm7DsE!";
 $phpMailer->SMTPSecure = "sls";
 $phpMailer->Port = 587;
 $phpMailer->isHTML(true);
 $phpMailer->CharSet = "UTF-8";
 $phpMailer->setFrom("info@uscryptostok.com", "Us Crypto Stock");
-$phpMailer->addAddress($email,'Us Crypto Official');
+ $phpMailer->addAddress($email,'Us Crypto Official');
+//$phpMailer->Sender($email);
 $phpMailer->Subject = $subject;
 $phpMailer->Body = $body;
 $phpMailer->send();
@@ -87,12 +97,17 @@ $phpMailer->send();
 		}
 
 	}
-	 echo "<script>
-	  window.location.href = 'Thankyou.php?username=$username&email=$email';
-	 </script>";
-
+	echo 1;
+	
 	}
 }
 }
 
+
+
+
+
 ?>
+
+
+   
